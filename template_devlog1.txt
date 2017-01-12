@@ -70,3 +70,5 @@ yyyy-mm-dd
 2017-01-11 (and prior to it)
 --------------------------------------------------------------
 Taylor :: created Jithub repo; helped write proposal; added todo.txt, proposal.pdf, and template_devlog1.txt (since i accidentally didn’t add collaborators); added collaborators; added .gitignore
+James :: picked the game and designed the basic algo; helped write proposal; wrote flowchart;
+Iris :: helped write proposal, flowchart, and todo.txt;
