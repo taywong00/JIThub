@@ -6,21 +6,6 @@ pd 4
 ---------------------
 Topher Flip
 
-Suggested usage: 
-* Replace all fields, angle brackets included, with specified info.
-  eg, pd <pd#> --> pd 3 (Taylor did this already)
-* Delete these instructions once all teammates understand usage.
-
-devlog--
-Use keyboard shortcut to jump to end,
- replicate entry template,
- modify appropriately.
-
-zone of reflection--
-Flesh out each category whenever necessary, appropriate.
- Need not be fully filled in until end of project,
- but best done as you go along.
-
 
 /////////// Zone of Reflection \\\\\\\\\\\
 ------------------------------------------
@@ -58,13 +43,8 @@ tales of wisdom gained...
 ==============================================================
 
 
-*EXAMPLE ENTRY TEMPLATE:*
-yyyy-mm-dd
---------------------------------------------------------------
-<Member> :: <Thing member did.>
-<Member> :: <Thing member did.>
-<Member> :: <Thing member did.>
-==============================================================
+
+
 
 
 2017-01-11 (and prior to it)
@@ -72,3 +52,12 @@ yyyy-mm-dd
 Taylor :: created Jithub repo; helped write proposal; added todo.txt, proposal.pdf, and template_devlog1.txt (since i accidentally didn’t add collaborators); added collaborators; added .gitignore
 James :: picked the game and designed the basic algo; helped write proposal; wrote flowchart;
 Iris :: helped write proposal, flowchart, and todo.txt;
+
+
+
+yyyy-mm-dd
+--------------------------------------------------------------
+<Member> :: <Thing member did.>
+<Member> :: <Thing member did.>
+<Member> :: <Thing member did.>
+==============================================================
