@@ -20,7 +20,7 @@ public class Display{
     }
 
 
-    public void Populate(String[][] grid){
+    public void populate(String[][] grid){
 	int alphaIndex = 0;
 	for (String[] r : grid) {
 	    for (String c : r) {
