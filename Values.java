@@ -70,10 +70,24 @@ public class Values {
     
     public void popPoints(){
 	
+	for(int i : pointsVal[0]){
+	    pointsVal[0][i] = arrayRowSum(i);
+	}
+	for(int i : pointsVal[1]){
+	    pointsVal[1][i] = arrayColumnSum(i);
+	}
+    
     }
 
     public void popTophers(){
-
+	for(int i : tophersVal[0]){
+	    tophersVal[0][i] = arrayRowSum(i);
+	}
+	for(int i : tophersVal[1]){
+	    tophersVal[1][i] = arrayColumnSum(i);
+	}
+    
     }
+    
     
 }
