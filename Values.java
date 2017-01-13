@@ -25,7 +25,8 @@ public class Values {
 	    lastPos ++;
 	}
     }
-  
+
+    //populates lineVal with 1 2 and 3 (the rest are 0s for tophers) 
     public void popLineVal (int level){
 	addToLineVal(1, 17 - 2*level);
 	if (Math.random()*2 > 1){
@@ -36,11 +37,14 @@ public class Values {
 	    addToLineVal(3, level + 2);
 	    addToLineVal(2, level + 1);
 	}
+	lineScrambleGrid();
     }
 
+    //scrambles the order of the lineVal
     public void lineScrambleGrid(){
     }
-    
+
+    //transcribes the scrambled values in lineVal into grid format
     public void popGridVal(){
 	int x = 0;
 	for(int[] a: gridVal)
@@ -52,6 +56,7 @@ public class Values {
 	    }
     }
 
+    
     public int arrayColumnSum(int y){
 	int sum = 0;
 	for(int[] i: gridVal){
@@ -67,6 +72,7 @@ public class Values {
 	}
 	return sum;
     }
+
     
     public void popPoints(){
 	
@@ -79,12 +85,39 @@ public class Values {
     
     }
 
+    //counts number of tophers in a column
+    public int arrayColumnTophers(int y){
+	int topherCtr = 0;
+
+	for(int[] i: gridVal){
+	    if (i[y] == 0){
+		topherCtr++;
+	    }
+	}
+
+	
+	return topherCtr;
+    }
+
+    //counts number of tophers in a row
+    public int arrayRowTophers(int x){
+	int topherCtr = 0;
+	for(int i : gridVal[x] ){
+	    if (i == 0)
+		{
+		    topherCtr++;
+		}
+	}
+	return topherCtr;
+    }
+    
+
     public void popTophers(){
 	for(int i : tophersVal[0]){
-	    tophersVal[0][i] = arrayRowSum(i);
+	    tophersVal[0][i] = arrayRowTopher(i);
 	}
 	for(int i : tophersVal[1]){
-	    tophersVal[1][i] = arrayColumnSum(i);
+	    tophersVal[1][i] = arrayColumnTopher(i);
 	}
     
     }

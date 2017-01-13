@@ -1,5 +1,5 @@
 public class Display{
-    
+ 
     //Inst Vars
 
     private String[][] gridDis;
@@ -15,18 +15,34 @@ public class Display{
     //default constructor
     public Display(){
         String[][] gridDis = new String[5][5];
+        int alphaIndex = 0;
 	int[][] pointsDis = new int[2][5];
         int[][] tophersDis = new int[2][5];
     }
 
-
-    public void populate(String[][] grid){
+    //populates gridDis with letters of alphabet
+    public void populate(){
 	int alphaIndex = 0;
-	for (String[] r : grid) {
+	for (String[] r : gridDis) {
 	    for (String c : r) {
 		c = ALPHABET[ alphaIndex ];
 		alphaIndex += 1;
 	    }
 	}
     }
+
+    //prints the grid
+    public void printGrid(){
+	for(String[] i : gridDis)
+	    {
+		for (String x: i){
+		    System.out.println(x);
+		}
+		System.out.print("\n");	
+	    }
+	
+    }
+
+
+ 
 }
