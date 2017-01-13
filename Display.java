@@ -21,4 +21,12 @@ public class Display{
 
 
     public void Populate(String[][] grid){
-	for (String[] i: a)
+	int alphaIndex = 0;
+	for (String[] r : grid) {
+	    for (String c : r) {
+		c = ALPHABET[ alphaIndex ];
+		alphaIndex += 1;
+	    }
+	}
+    }
+}
