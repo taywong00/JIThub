@@ -54,6 +54,12 @@ James :: picked the game and designed the basic algo; helped write proposal; wro
 Iris :: helped write proposal, flowchart, and todo.txt;
 
 
+2017-01-12
+--------------------------------------------------------------
+Taylor :: Added/ Created Display.java, Woo.java, Values.java to repo; added populate method to Display
+James :: Created Display.java
+Iris :: Created Display.java
+==============================================================
 
 yyyy-mm-dd
 --------------------------------------------------------------
