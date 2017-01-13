@@ -3,7 +3,7 @@ public class Values {
     //Inst Vars
     private int lastPos;
     private int[] lineVal;
-    private int[][] gridVal;
+    private static int[][] gridVal;
     private int[][] pointsVal;
     private int[][] tophersVal;
 
@@ -26,7 +26,7 @@ public class Values {
 	}
     }
 
-    //populates lineVal with 1 2 and 3 (the rest are 0s for tophers) 
+    //populates lineVal with 0 1 2 and 3 
     public void popLineVal (int level){
 	addToLineVal(1, 17 - 2*level);
 	if (Math.random()*2 > 1){
@@ -37,11 +37,13 @@ public class Values {
 	    addToLineVal(3, level + 2);
 	    addToLineVal(2, level + 1);
 	}
+	addToLineVal(0, 4 + level);
 	lineScrambleGrid();
     }
 
     //scrambles the order of the lineVal
     public void lineScrambleGrid(){
+	//not necessary yet
     }
 
     //transcribes the scrambled values in lineVal into grid format
@@ -114,13 +116,17 @@ public class Values {
 
     public void popTophers(){
 	for(int i : tophersVal[0]){
-	    tophersVal[0][i] = arrayRowTopher(i);
+	    tophersVal[0][i] = arrayRowTophers(i);
 	}
 	for(int i : tophersVal[1]){
-	    tophersVal[1][i] = arrayColumnTopher(i);
+	    tophersVal[1][i] = arrayColumnTophers(i);
 	}
     
     }
     
+    public static int getValue(int x, int y){
+
+        return gridVal[x][y];
+    }
     
 }

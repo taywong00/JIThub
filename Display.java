@@ -5,6 +5,7 @@ public class Display{
     private String[][] gridDis;
     private int[][] pointsDis;
     private int[][] tophersDis;
+    private int flippedVal;
 
     private static String[] ALPHABET={
 	"A","B","C","D","E","F","G","H","I","J","K","L","M",
@@ -43,6 +44,19 @@ public class Display{
 	
     }
 
+    //copies a meaningful value from class Values into Display to be displayed
+    //simulates a flip
+    public void transcribe(Values grid, int x, int y){
+	String s = "" + Values.getValue(x, y);
+	gridDis[x][y] = s;
+	flippedVal = Values.getValue(x,y);
+    }
+    
+    public void multiplier(){
+        Woo.pointCtr = Woo.pointCtr*flippedVal;
+    }
+    
 
+    
  
 }
