@@ -25,7 +25,6 @@ public class Values {
 	    lastPos ++;
 	}
     }
-
   
     public void popLineVal (int level){
 	addToLineVal(1, 17 - 2*level);
@@ -40,10 +39,41 @@ public class Values {
     }
 
     public void lineScrambleGrid(){
-	
-
     }
     
     public void popGridVal(){
+	int x = 0;
+	for(int[] a: gridVal)
+	    {
+		for(int b : a){
+		    a[b] = lineVal[x];
+		    x++;
+		}
+	    }
     }
+
+    public int arrayColumnSum(int y){
+	int sum = 0;
+	for(int[] i: gridVal){
+	    sum += i[y];
+	}
+	return sum;
+    }
+
+    public int arrayRowSum(int x){
+	int sum = 0;
+	for(int i : gridVal[x] ){
+	    sum += i;
+	}
+	return sum;
+    }
+    
+    public void popPoints(){
+	
+    }
+
+    public void popTophers(){
+
+    }
+    
 }
