@@ -1,3 +1,4 @@
+
 public class Display{
  
     //Inst Vars
@@ -20,10 +21,11 @@ public class Display{
         int[][] tophersDis = new int[2][5];
     }
 
-  //populates gridDis with letters of alphabet
-    public void populate(){
-	int alphaIndex = 0;
+ 
 
+  //populates gridDis with letters of alphabet
+    public void populate(String[][] gridDis){
+	int alphaIndex = 0;
 	for (int i = 0; i < gridDis.length; i ++){
 	    for (int u = 0; u < gridDis[1].length; u ++){
 	        gridDis[i][u] = ALPHABET[alphaIndex];
@@ -33,7 +35,7 @@ public class Display{
     }
 
      //prints the grid
-    public void printGrid(){
+    public void printGrid(String[][] gridDis){
         System.out.println("----------");	
 	for(String[] i :gridDis){
 	 
