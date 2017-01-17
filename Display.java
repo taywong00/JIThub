@@ -42,9 +42,21 @@ public class Display{
 		}
 		System.out.println("");	
 	    }
-	System.out.println("----------");	
-	
+	System.out.println("----------");
     }
+    //copies a meaningful value from class Values into Display to be displayed
+-    //simulates a flip
+-    public void transcribe(Values grid, int x, int y){
+-	String s = "" + Values.getValue(x, y);
+-	gridDis[x][y] = s;
+-	flippedVal = Values.getValue(x,y);
+-    }
+-    
+-    public void multiplier(){
+-        Woo.pointCtr = Woo.pointCtr*flippedVal;
+-    }
+    
+	
 }
 
 
