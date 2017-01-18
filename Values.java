@@ -7,6 +7,7 @@ public class Values {
     private int[][] pointsVal;
     private int[][] tophersVal;
 
+    /*
     //default contructor
     public Values(){
 
@@ -16,6 +17,7 @@ public class Values {
 	int[][] pointsVal = new int[2][5]; //the first row will be the COLUMN
 	int[][] tophersVal = new int[2][5];//the second row will be the ROW
     }
+*/
 
     // adds value (1, 2, 3) to lineVal for x times (x will depend on the level)
     public void addToLineVal( int value, int x )
