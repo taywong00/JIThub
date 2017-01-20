@@ -61,6 +61,16 @@ James :: Created Display.java
 Iris :: Created Display.java
 ==============================================================
 
+2017-01-18
+--------------------------------------------------------------
+James & Taylor & Iris :: added description and launch instructions to README.md
+==============================================================
+
+2017-01-18
+--------------------------------------------------------------
+James & Iris :: Fixed the issue with the instantiations of Display and Value's inst vars and (finally..) got rid of the error message :D
+==============================================================
+
 yyyy-mm-dd
 --------------------------------------------------------------
 <Member> :: <Thing member did.>
