@@ -75,12 +75,12 @@ James & Iris :: Fixed the issue with the instantiations of Display and Value's i
 --------------------------------------------------------------
 James :: edited the lineScrambleGrid, Swap method.
 Iris :: added the Keyboard (input) feature.
-Taylor :: 
+Taylor :: began flip method, created findR/findC methods
 ==============================================================
 
 yyyy-mm-dd
 --------------------------------------------------------------
 <Member> :: <Thing member did.>
 <Member> :: <Thing member did.>
-<Member> :: <Thing member did.>
+Taylor :: edited findR/C, edited flip, edited main in Woo, created flipAll, created toTopher method
 ==============================================================
