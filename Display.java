@@ -6,9 +6,9 @@ public class Display{
     public int flippedVal;
     
 
-    private String[] ALPHABET={
+    public String[] ALPHABET={
     "A","B","C","D","E","F","G","H","I","J","K","L","M",
-    "N","O","P","Q","R","S","T","U","V","W","X","Y","Z"
+    "N","O","P","Q","R","S","T","U","V","W","X","Y"
     };
 
     
@@ -29,33 +29,41 @@ public class Display{
         alphaIndex ++;
         }
     }
-    }
     
+    }
+
+
+  
     
     //return the "x" (row) val of a letter in the grid
-    public int findR(String letter) {
-    for (int r = 0; r < 6; r ++){
-        for (int c = 0; c < 6; c ++){
-                if (letter == this.gridDis[r][c]) {
-                    return r;
-        }
-        }
-    }
-    return 0;
-    }
-    
-    
-    //return the "y" (row) val of a letter in the grid
     public int findC(String letter) {
-       for (int r = 0; r < 6; r ++){
-        for (int c = 0; c < 6; c ++){
-                if (letter == this.gridDis[r][c]) {
-                    return c;
-        }
-        }
-       }
-       return 0;
+	String here ="ABCDEFGHIJKLMNOPQRSTUVWXY";
+   
+ 
+	int ind =  here.indexOf(letter);
+
+	return ind%5; //3
+
     }
+	  
+
+
+
+    //return the "y" (row) val of a letter in the grid
+    public int findR(String letter) {
+	String here ="ABCDEFGHIJKLMNOPQRSTUVWXY";
+   
+ 
+	int ind =  here.indexOf(letter);
+
+	return ind / 5; //4
+	
+       
+
+    }
+
+    
+    
               
     
     // TO BE CHANGED TO PRINT THE GRID AND POINTS AND TOPHERS

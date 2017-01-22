@@ -25,95 +25,93 @@ public class Values {
      
      
      
-    /*
-     
-       //================================
-    public void playTurn(){
-       System.out.println("Enter a letter coordinate that's shown above:");
-       String letter = Keyboard.readString();
-       System.out.println(letter);
    
-       System.out.println("What do you want to do with it?");
-      
-       System.out.println("1. Flipppp it!");
-       System.out.println("2. Take notes...");
-       int choice = Keyboard.readInt();
-       
-       // System.out.println(choice);
-       if (choice == 1){
-       System.out.println("//flip method here");
-       }
-       else{
-       takeNotes(letter);
-       }
-     }
      
-    //==================================================
-
-        //takeNotes
-    public void takeNotes(String letter){
-    System.out.println("Please enter your notes for " + letter);
-    String notes = Keyboard.readString();
-    //System.out.println(notes);
-    allNotes += notes;
+  
     
+    // adds value (1, 2, 3) to lineVal for x times 
+    /*
+    public void addToLineVal( int value, int x )
+
+    {
+    for(int a = 0; a < x ; a++x){
+        lineVal[a] = value;
+    }
     }
     */
-   
-    
-    //===================================================
-    
-    // adds value (1, 2, 3) to lineVal for x times (x will depend on the level)
-    public void addToLineVal( int value, int x )
-    {
-    for(int a = 0; a < x ; a++){
-        lineVal[lastPos] = value;
-        lastPos ++;
-    }
-    }
 
     //populates lineVal with 0 1 2 and 3 
-    public void popLineVal (int level){
-    addToLineVal(1, 17 - 2*level );
-    if (Math.random()*2 > 1){
-        addToLineVal(2, level + 2);
-        addToLineVal(3, level + 1);
-    }
-    else {
-        addToLineVal(3, level + 2);
-        addToLineVal(2, level + 1);
-    }
-    addToLineVal(0, 4 + level);
-    lineScrambleGrid();
-    }
+    public void popLineVal (){
+	for (int i = 0; i < 25; i ++){
+	    if (i < 15){
+		lineVal[i] = 1;
+	    }
+	    else if (i < 18){
+		lineVal[i] = 2;
+	    }
+	    else if (i < 20){
+		lineVal[i] = 3;
+	    }
+	    else{
+		lineVal[i] = 0;
+	    }	
+	}
 
-    //swaps values for lineScrambleGrid method
-    public void swap(int a, int b){
-    int store = lineVal[a]; 
-    lineVal[a] = lineVal[b];
-    lineVal[b] = store;
+	for (int i = 0; i < 25; i ++){
+	    int ran = (int)(Math.random()*25);
+	    int temp = lineVal[i];
+	    lineVal[i] = lineVal[ran];
+	    lineVal[ran] = temp;
+	    
+	    
+	    
+	}
+	/*
+	  for (int a = 0; a < 24; a++){
 
+	int b = 5;
+	
+            int store = lineVal[a]; 
+	    lineVal[a] = lineVal[b];
+	    lineVal[b] = store;
+	*/
+	
     }
+	    
+   
 
-    //scrambles lineVal for popGridVal  
+
+
+
+
+
+    
+
+  
+
+
+    
+    /*  //scrambles lineVal for popGridVal  
     public void lineScrambleGrid(){
-    for (int i = 0; i < 24; i++){
-        swap(lineVal[i], lineVal[(int)Math.random()*25]);
+  
+       
          } 
     }
+    */
 
     //transcribes the scrambled values in lineVal into grid format
     public void popGridVal(){
-    int x = 0;
-    lineScrambleGrid();
-    for(int[] a: gridVal)
-        {
-        for(int b : a){
-            a[b] = lineVal[x];
-            x++;
-        }
-        }
+	
+	for (int i = 0; i < 5; i ++){
+	    for (int c = 0; c < 5; c  ++){
+		gridVal[i][c] = lineVal[i*5 + c];
+	    }
+	}
     }
+
+    
+   
+  
 
 //==============================THE ABOVE FOCUSES ON THE GRID VALUES=====
 //==============================THE BELOW FOCUSES ON COUNTING POINTS=====

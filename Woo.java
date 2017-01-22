@@ -1,5 +1,5 @@
 public class Woo {
-    public static int level = 1;
+    // public static int level = 1;
     public static int pointCtr = 1;
     private static Display foo;
     private static Values boo;
@@ -10,10 +10,15 @@ public class Woo {
     //flip method
     public static void flip(String letter) {
         //find the coordinatyes of the letter;
+	
         int letterR = foo.findR(letter);
-        int letterC = foo.findC(letter);
+	int letterC = foo.findC(letter);
+	
+	//System.out.println("======" + foo.findR(letter));
+	//System.out.println("======" + foo.findC(letter));
         
         //get new number from boo (values)
+        
         int newNumVal = boo.gridVal[letterR][letterC];
         
         //check to see if you flipped a topher!
@@ -34,8 +39,8 @@ public class Woo {
     //basically just set the gridDis to gridVal
     public static  void flipAll() {
        
-    for (int r = 0; r < 6; r ++){
-        for (int c = 0; c < 6; c ++){
+    for (int r = 0; r < 5; r ++){
+        for (int c = 0; c < 5; c ++){
         foo.gridDis[r][c] = "" + boo.gridVal[r][c];
         }
     }
@@ -46,8 +51,8 @@ public class Woo {
 
         //convert the 0s to @'s for topher
     public static  void toTopher() {
-        for (int r = 0; r < 6; r ++){
-        for (int c = 0; c < 6; c ++){
+        for (int r = 0; r < 5; r ++){
+        for (int c = 0; c < 5; c ++){
                 if (foo.gridDis[r][c] == "0") {
                     foo.gridDis[r][c] = "@";
                 }
@@ -58,7 +63,8 @@ public class Woo {
     
     public static void playTurn(){
         System.out.println("Enter a letter coordinate that's shown above:");
-        String letter = Keyboard.readString();
+        String letter = Keyboard.readString().toUpperCase();
+	
         System.out.println(letter);
     
         System.out.println("What do you want to do with it?");
@@ -67,11 +73,15 @@ public class Woo {
         int choice = Keyboard.readInt();
     System.out.println(boo.allNotes);
     
-        // System.out.println(choice);
+        
         if (choice == 1){
-            flip(letter);
+	    flip(letter);
+	   
             toTopher();
+	    foo.printAll();
+	    
             //regular continue of gameplay
+	    /*
             if (flippedTopher == false) {
                 System.out.println("Here's what your grid looks like after you flipped " + letter + ":\n");
                 foo.printAll();
@@ -80,6 +90,7 @@ public class Woo {
                 System.out.print("Oh no! Looks like you flipped a Topher!");
                 foo.printAll();
             }
+	    */
             
         }
         else{
@@ -93,7 +104,7 @@ public class Woo {
     System.out.println("Please enter your notes for " + letter);
     String notes = Keyboard.readString();
     //System.out.println(notes);
-    boo.allNotes += notes;
+    boo.allNotes += letter + ": " +  notes;
     
     }
     //====================
@@ -105,16 +116,18 @@ public class Woo {
         foo = new Display();
         foo.populate();
         foo.printAll();
+	
 
 
         //Value
     
         boo = new Values();
             
-        boo.popLineVal(level);
-        
+        boo.popLineVal();
+
         boo.popGridVal();
-        
+
+	playTurn();
           //actual game playing
         while (flippedTopher = false) {
             playTurn();
