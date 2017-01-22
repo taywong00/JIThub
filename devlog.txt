@@ -82,5 +82,5 @@ yyyy-mm-dd
 --------------------------------------------------------------
 <Member> :: <Thing member did.>
 <Member> :: <Thing member did.>
-Taylor :: edited findR/C, edited flip, edited main in Woo, created flipAll, created toTopher method, edited playTurn method
+Taylor :: edited findR/C, edited flip, edited main in Woo, created flipAll, created toTopher method, edited playTurn method, debugged
 ==============================================================
