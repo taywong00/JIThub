@@ -68,7 +68,14 @@ James & Taylor & Iris :: added description and launch instructions to README.md
 
 2017-01-18
 --------------------------------------------------------------
-James & Iris :: Fixed the issue with the instantiations of Display and Value's inst vars and (finally..) got rid of the error message :D
+James & Iris :: Fixed the issue with the instantiations of Display and Value's inst vars and (finally..) got rid of the error message.
+==============================================================
+
+2017-01-20
+--------------------------------------------------------------
+James :: edited the lineScrambleGrid, Swap method.
+Iris :: added the Keyboard (input) feature.
+Taylor :: 
 ==============================================================
 
 yyyy-mm-dd
