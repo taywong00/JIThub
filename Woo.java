@@ -1,25 +1,25 @@
 public class Woo {
     public static int level = 1;
     public static int pointCtr = 1;
-    private Display foo;
-    private Values boo;
-    private boolean flippedTopher = false;
+    private static Display foo;
+    private static Values boo;
+    private static boolean flippedTopher = false;
     
     //NOTE: display method has methods to find x and y of a letter in the display grid 
     
     //flip method
-    public void flip(String letter) {
+    public static void flip(String letter) {
         //find the coordinatyes of the letter;
-        String letterR = foo.gridDis.findR(letter);
-        String letterC = boo.gridVal.findC(letter);
+        int letterR = foo.findR(letter);
+        int letterC = foo.findC(letter);
         
         //get new number from boo (values)
-        newNumVal = boo.gridVal[letterR][letterC];
+        int newNumVal = boo.gridVal[letterR][letterC];
         
         //check to see if you flipped a topher!
         if (newNumVal == 0) {
             foo.gridDis[letterR][letterC] = "" + newNumVal;
-            flipAll()
+            flipAll();
             flippedTopher = true;
         }
         else {
@@ -32,22 +32,24 @@ public class Woo {
     
     //occurs when you flip a topher
     //basically just set the gridDis to gridVal
-    public void flipAll() {
-        for (String[] r : foo.gridDis ) {
-            for (String c : r ) {
-                foo.gridDis[r][c] = "" + boo.gridVal[r][c];
-            }
+    public static  void flipAll() {
+       
+    for (int r = 0; r < 6; r ++){
+        for (int c = 0; c < 6; c ++){
+        foo.gridDis[r][c] = "" + boo.gridVal[r][c];
+        }
+    }
     }
     
     
-    }
+    
 
-        //convert the 0s to T's for topher
-    public void toTopher() {
-        for (String[] r : foo.gridDis ) {
-            for (String c : r ) {
+        //convert the 0s to @'s for topher
+    public static  void toTopher() {
+        for (int r = 0; r < 6; r ++){
+        for (int c = 0; c < 6; c ++){
                 if (foo.gridDis[r][c] == "0") {
-                    foo.gridDis[r][c] = "T";
+                    foo.gridDis[r][c] = "@";
                 }
             }
         }
@@ -63,7 +65,8 @@ public class Woo {
         System.out.println("1. Flip it!");
         System.out.println("2. Take notes...");
         int choice = Keyboard.readInt();
-       
+    System.out.println(boo.allNotes);
+    
         // System.out.println(choice);
         if (choice == 1){
             flip(letter);
@@ -83,6 +86,17 @@ public class Woo {
         takeNotes(letter);
         }
      }
+
+    //====================
+            //takeNotes
+    public static void takeNotes(String letter){
+    System.out.println("Please enter your notes for " + letter);
+    String notes = Keyboard.readString();
+    //System.out.println(notes);
+    boo.allNotes += notes;
+    
+    }
+    //====================
        
            
     public static void main(String[] args){

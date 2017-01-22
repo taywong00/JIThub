@@ -3,10 +3,10 @@ public class Values {
     //Inst Vars
     private int lastPos;
     private int[] lineVal;
-    private static int[][] gridVal;
-    private int[][] pointsVal;
-    private int[][] tophersVal;
-    private String allNotes;
+    public static int[][] gridVal;
+    private static int[][] pointsVal;
+    private static int[][] tophersVal;
+    public String allNotes;
     
     //default contructor
     public Values(){
@@ -19,20 +19,13 @@ public class Values {
         pointsVal = new int[2][5]; //the first row will be the COLUMN
         tophersVal = new int[2][5];//the second row will be the ROW 
         allNotes = "Your Notes: \n";
-        /*
-        is anyone editing this? 
-        tophersVale);
-       }
-       else{
-       takeNotes(letter);
-       }
-       */
+        
      }
      
      
      
      
-     
+    /*
      
        //================================
     public void playTurn(){
@@ -65,6 +58,7 @@ public class Values {
     allNotes += notes;
     
     }
+    */
    
     
     //===================================================
@@ -104,7 +98,7 @@ public class Values {
     //scrambles lineVal for popGridVal  
     public void lineScrambleGrid(){
     for (int i = 0; i < 24; i++){
-        swap(lineVal[i], lineVal[Math.random()*25]);
+        swap(lineVal[i], lineVal[(int)Math.random()*25]);
          } 
     }
 
@@ -204,11 +198,6 @@ public class Values {
 
         return tophersVal[x][y];
     }
-    
-    
-    
-    
-    
     
     
 }
