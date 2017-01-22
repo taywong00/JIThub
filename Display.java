@@ -34,9 +34,15 @@ public class Display{
     
     //return the "x" (row) val of a letter in the grid
     public int findR(String letter) {
+<<<<<<< HEAD
     for (int r = 0; r < 6; r ++){
         for (int c = 0; c < 6; c ++){
                 if (letter == this.gridDis[r][c]) {
+=======
+        for ( String[] r : this ) {
+            for ( String c : r ) {
+                if (letter == this[r][c]) {
+>>>>>>> 53af7b33837f31565f165cb8bfac55d0c15c43fd
                     return r;
         }
         }
@@ -47,9 +53,15 @@ public class Display{
     
     //return the "y" (row) val of a letter in the grid
     public int findC(String letter) {
+<<<<<<< HEAD
        for (int r = 0; r < 6; r ++){
         for (int c = 0; c < 6; c ++){
                 if (letter == this.gridDis[r][c]) {
+=======
+        for ( String[] r : this ) {
+            for ( String c : r ) {
+                if (letter == this[r][c]) {
+>>>>>>> 53af7b33837f31565f165cb8bfac55d0c15c43fd
                     return c;
         }
         }
