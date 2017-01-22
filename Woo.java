@@ -19,7 +19,7 @@ public class Woo {
         //check to see if you flipped a topher!
         if (newNumVal == 0) {
             foo.gridDis[letterR][letterC] = "" + newNumVal;
-            flipAll()
+            flipAll();
             flippedTopher = true;
         }
         else {
