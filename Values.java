@@ -4,8 +4,8 @@ public class Values {
     private int lastPos;
     private int[] lineVal;
     public static int[][] gridVal;
-    private static int[][] pointsVal;
-    private static int[][] tophersVal;
+    public static int[][] pointsVal;
+    public static int[][] tophersVal;
     public String allNotes;
     
     //default contructor
@@ -62,42 +62,15 @@ public class Values {
 	    int temp = lineVal[i];
 	    lineVal[i] = lineVal[ran];
 	    lineVal[ran] = temp;
-	    
-	    
+	        
 	    
 	}
-	/*
-	  for (int a = 0; a < 24; a++){
 
-	int b = 5;
-	
-            int store = lineVal[a]; 
-	    lineVal[a] = lineVal[b];
-	    lineVal[b] = store;
-	*/
+       
 	
     }
 	    
    
-
-
-
-
-
-
-    
-
-  
-
-
-    
-    /*  //scrambles lineVal for popGridVal  
-    public void lineScrambleGrid(){
-  
-       
-         } 
-    }
-    */
 
     //transcribes the scrambled values in lineVal into grid format
     public void popGridVal(){
@@ -177,24 +150,41 @@ public class Values {
     
     //populates tophersVAL with values from the array---tophers methods for display to call
     public void popTophers(){
-    for(int i : tophersVal[0]){
-        tophersVal[0][i] = arrayRowTophers(i);
-    }
-    for(int i : tophersVal[1]){
-        tophersVal[1][i] = arrayColumnTophers(i);
-    }
+
+	for (int i = 0; i <2; i ++){
+	    for (int c = 0; c< 5; c ++){
+		
+		tophersVal[i][c] = 4;
+		System.out.print(tophersVal[i][c]);
+	        
+	    }
+	}
     
     }
+    /*
+ 
+       for(int i = 0; i < 5; i ++){
+	
+
+	   tophersVal[0][i] = 4;//arrayRowTophers(i);
+    }
+    for(int i = 0; i < 5; i ++){
+        tophersVal[1][i] = 4;// arrayColumnTophers(i);
+    }
+	
+    
+    }
+    */
     
 //================================THE ABOVE FOCUSES ON TOPHERS============    
   
-    public static int getValuePoints(int x, int y){
+    public static String getValuePoints(int x, int y){
 
-        return pointsVal[x][y];
+        return pointsVal[x][y] + "";
     }
-    public static int getValueTophers(int x, int y){
+    public static String  getValueTophers(int x, int y){
 
-        return tophersVal[x][y];
+        return tophersVal[x][y] + "";
     }
     
     

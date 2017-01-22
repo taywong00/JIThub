@@ -114,8 +114,7 @@ public class Woo {
     
         //Display
         foo = new Display();
-        foo.populate();
-        foo.printAll();
+
 	
 
 
@@ -127,12 +126,23 @@ public class Woo {
 
         boo.popGridVal();
 
+	boo.popTophers();
+	boo.popPoints();
+
+        foo.populate();
+       
+	foo.printAll();
+
+	
+	 
 	playTurn();
           //actual game playing
+
         while (flippedTopher = false) {
             playTurn();
         }
-        
+ 
+	
      
            
     }

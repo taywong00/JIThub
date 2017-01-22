@@ -42,7 +42,7 @@ public class Display{
  
 	int ind =  here.indexOf(letter);
 
-	return ind%5; //3
+	return ind%5; 
 
     }
 	  
@@ -56,7 +56,7 @@ public class Display{
  
 	int ind =  here.indexOf(letter);
 
-	return ind / 5; //4
+	return ind / 5; 
 	
        
 
@@ -66,24 +66,34 @@ public class Display{
     
               
     
-    // TO BE CHANGED TO PRINT THE GRID AND POINTS AND TOPHERS
-    //prints the grid
-    public void printAll(){
-        System.out.println("----------");   
-        for(String[] r :gridDis){
-     
-            for (String x: r){
-                System.out.print(x + " ");
-                
-            }
-            System.out.println(""); 
-        }
+   public void printAll(){
+       Values moo = new Values();
+       
         System.out.println("----------");
-    }
+	for (int i = 0; i < 5; i ++){
+	    //System.out.print(moo.pointsVal[0][i]);
+	    System.out.print(moo.tophersVal[0][i]);
 
-    
+	    
+	    
+	    for (int c = 0; c < 5; c ++){
+		System.out.print(gridDis[i][c] + " ");
+	    }
+	    System.out.println("");
+	   
+	  
+	}
+	System.out.println(" ");
+	 System.out.println("----------");
+   }
    
-    
+   
+
+	
+
+	   
+	    
+
     
     public void multiplier(){
         Woo.pointCtr = Woo.pointCtr*flippedVal;
