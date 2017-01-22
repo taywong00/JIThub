@@ -2,8 +2,8 @@ public class Display{
     
     //Inst Vars
 
-    private String[][] gridDis;
-    private int flippedVal;
+    public String[][] gridDis;
+    public int flippedVal;
     
 
     private String[] ALPHABET={
@@ -15,8 +15,7 @@ public class Display{
     //default constructor
     public Display(){
         gridDis = new String[5][5];
-        pointsDis = new int[2][5];
-        tophersDis = new int[2][5];
+       
     }
 
  
@@ -35,43 +34,59 @@ public class Display{
     
     //return the "x" (row) val of a letter in the grid
     public int findR(String letter) {
-        for ( r : this ) {
-            for ( c : r ) {
-                if (letter == this[r][c]) {
+    for (int r = 0; r < 6; r ++){
+        for (int c = 0; c < 6; c ++){
+                if (letter == this.gridDis[r][c]) {
                     return r;
-                }
-            }
         }
+        }
+    }
+    return 0;
     }
     
     
     //return the "y" (row) val of a letter in the grid
     public int findC(String letter) {
-        for ( r : this ) {
-            for ( c : r ) {
-                if (letter == this[r][c]) {
+       for (int r = 0; r < 6; r ++){
+        for (int c = 0; c < 6; c ++){
+                if (letter == this.gridDis[r][c]) {
                     return c;
-                }
-            }
         }
+        }
+       }
+       return 0;
     }
+              
     
     // TO BE CHANGED TO PRINT THE GRID AND POINTS AND TOPHERS
     //prints the grid
-    public void printAll(){
+   public void printAll(){
         System.out.println("----------");   
         for(String[] r :gridDis){
      
             for (String x: r){
                 System.out.print(x + " ");
-                
+		System.out.print(getValuePoints(1, x) + " ");
+		System.out.print(getValueTophers(1, x) + " ");
             }
-            System.out.println(""); 
+            System.out.println("");
+	 
         }
+	for (int i : pointsVal){
+	    System.out.print(getValuePoints(0,i) + " ");
+	}
+
+	System.out.println(" ");
+
+	for (int i : tophersVal){
+	    System.out.print(getValueTophers(0,i) + " ");
+	}
+	
+
+
+	
         System.out.println("----------");
     }
-
-    
    
     
     
@@ -81,4 +96,3 @@ public class Display{
 
     
 }
-
