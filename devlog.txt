@@ -11,7 +11,7 @@ Topher Flip
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow we so BOSS bc...
+1. At first we kept getting a "NullPointerException" error message and were unable to get rid of it unless we move all the array instantiations in Display and Values to the main method in Woo, which was obviously not the correct way to do it. After almost 4 days of struggles, we finally realized that it was because we wrote the instantiation lines wrong. [unfinished]
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
