@@ -118,45 +118,99 @@ public class Woo {
     
     }
     //====================
-       
+
+    public static void instructions() {
+	String info = "\n{ HOW TO PLAY: }\n";
+	info += "\nEach turn you will be prompted to have the choice to either flip a tile, make notes on it, or break the game (aka stop playing). Select an option by inputting the corresponding number and pressing ENTER. \n";
+	
+	info += "\n\n[FLIPPING:]\n";
+	info += "\t 1) Flipping will reveal the value of that tile. This value can either be a point value or a Topher. \n";
+	info += "\t    HOW TO FLIP: After selecting the option to flip, you will be asked to select the letter of the tile you want to flip. Input this letter and press ENTER. \n";
+
+	info += "\n\n[TAKING NOTES:]\n";	
+	info += "\t 2) You can take notes on the tile, meaning you can write whatever you want about it. Most use this section to keep track of which tiles have which potential values. \n";
+	info += "\t\t Remember: indicate which tile letter you're taking notes for! (Its up to you how you want to go about this.) \n";
+	info += "\t    HOW TO TAKE NOTES: After selecting the option to take notes, you will be asked to take them. Type in whatever note you would like to take on the tile and press ENTER. \n";
+
+	info += "\n\n[BREAKING:]\n";
+	info += "\t 3) If you ever feel like you don't want to play anymore (but let't be real, why would you??), you always have the option of breaking the game to stop playing.";
+	info += "\t    HOW TO BREAK: Simply selecting the option to break the game will cause the game to terminate, so be careful! \n";
+
+	System.out.print(info);
+	
+    }
+    
+
+    //===================
+    public static void newGame() {
+
+	String intro = "\n \n *** WELCOME TO TOPHER FLIP! *** \n";
+	intro += "In this game you will be tested in your skills to see how long you can last without discovering a Topher!\n";
+	
+
+	System.out.println(intro);
+    }
+
+
+    // =========================
            
     public static void main(String[] args){
+
+	int wannaPlay = 2;
+	newGame();
+
+	while (wannaPlay != 1) {
+	    //ask if they wanna play
+	    System.out.println("\n\nAre you ready to play??");
+	    
+	    System.out.println("1. OH YEAH BRING IT ON!!!");
+	    System.out.println("2. Read the instructions.");	
+	    System.out.println("3. Uhh not yet...?");
+	    wannaPlay = Keyboard.readInt();
+
+
+	    if (wannaPlay == 2) {
+		instructions();
+	    }
+	
+	    if (wannaPlay == 3)  {
+		System.out.println("No problem, don't sweat it! Maybe next time when you feel ready to face THE TOPHER.");
+		break;
+	    }
+	}
+	    
+	    if (wannaPlay == 1) {
+		//Display
+		foo = new Display();
+		
+		String allNotes = "";
+		
+		//Value
+		
+		boo = new Values();
+		
+		boo.popLineVal();
+		
+		boo.popGridVal();
+		
+		boo.popTophers();
+		boo.popPoints();
+		
+		//================
+		
+		foo.populate();
+		
+		foo.printAll(boo.tophersVal, boo.pointsVal);
+		
+		//================
+	    
+		
+		while (flippedTopher == false) {
+		    playTurn();
+		}
+	    
+	    }
     
-        //Display
-        foo = new Display();
-
-	
-	String allNotes = "";
-
-        //Value
-    
-        boo = new Values();
-            
-        boo.popLineVal();
-
-        boo.popGridVal();
-
-	boo.popTophers();
-	boo.popPoints();
-
-	//================
-
-        foo.populate();
-       
-	foo.printAll(boo.tophersVal, boo.pointsVal);
-
-	//================
-
-	
-	 
-
-
-        while (flippedTopher == false) {
-            playTurn();
-        }
- 
-	
-     
            
     }
 }
