@@ -11,19 +11,19 @@ Topher Flip
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Because each of us wrote different parts of the code, when we tried to put everything together, we got like 80 error messages because either certain pieces of code do not work or they cannot be incorporated together. So in fact the biggest obstacle was how to collaborate together and help solve each other's issues while still maintain the work efficiency. Fortuantely, we then decided to use join.me to share our screen with each other and debugged and worked on the rest of it together. We were then able to solve these issues one by one and, eventually, created a fully working version of the game. Below are a few examples of our debugging accompliments:
+Because each of us wrote different parts of the code, when we tried to put everything together, we got like 80 error messages because either certain pieces of code do not work or they cannot be incorporated together. So in fact the biggest obstacle was how to collaborate together and help solve each other's issues while still maintain the work efficiency. Fortuantely, we then decided to use join.me to share our screen with each other and debugged and worked on the rest of it together. We were then able to solve these issues one by one and, eventually, created a fully working version of the game. Below are a few examples of our debugging accomplishments:
 
 1. At first we kept getting a "NullPointerException" error message and were unable to get rid of it unless we move all the array instantiations in Display and Values to the main method in Woo, which was obviously not the correct way to do it. After almost 4 days of struggles, we finally realized that it was because we wrote the instantiation lines wrong. We were able to print the letter grid once we fixed this issue (that was our first proud accomplishment :D)
 
 2. It took us quite a while to figure out how to print the rows and columns representing the numbers of Tophers and points along with the actually 5x5 grid. At first we didn't know how to do the format, but we solved this issue by using several for loops to attach the two numbers to the end of each line of grid (and same thing for the bottom rows). But after that, all the numbers in those two columns/rows turned out to be 0s. We then spent a lot of time fixing methods like popTophers, popPoints, arrayRowTophers, etc. Although it was a bit time consuming, but we were very happy to see the entire grid (including the columns and rows on the side/at the bottom) got printed out when we fixed all the errors. 
 
-3. The flip method didn't seem to work at first neither. It only flipped the first letter and was unable to locate the letter in the input. We fixed this by figuring out an easier way to do the findR and findC method. Instead of looking back into the actually gridDis and gridVal arrays, we realized that the x and y indices of the letter can be found by just doing division and module by 25. Therefore we just added a new alphebat string to locate the letter's index and returned its indices by doing simple calculation, which made it a lot more efficient. 
+3. The flip method didn't seem to work at first neither. It only flipped the first letter and was unable to locate the letter in the input. We fixed this by figuring out an easier way to do the findR and findC method. Instead of looking back into the actually gridDis and gridVal arrays, we realized that the x and y indices of the letter can be found by just doing division and module by 25. Therefore we just added a new alphabet string to locate the letter's index and returned its indices by doing simple calculation, which made it a lot more efficient. 
 
 
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-1. We are unable to implement a try catch block in our Woo.java to deal with the potential wrong inputs by the player. Although the try catch blocks in Keyboard.java helpes handle part of it, when you type in a number in the first prompt, which asks for a letter in the grid, the error message does not show up until the next prompt and it returns an "IndexOutOfBound" error instead of a typical error message returned by the try catch block in Keyboard.java. 
+1. We are unable to implement a try catch block in our Woo.java to deal with the potential wrong inputs by the player. Although the try catch blocks in Keyboard.java handles part of it, when you type in a number in the first prompt, which asks for a letter in the grid, the error message does not show up until the next prompt and it returns an "IndexOutOfBound" error instead of a typical error message returned by the try catch block in Keyboard.java. 
 
 
 
@@ -31,18 +31,20 @@ UNRESOLVED ISSUES
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 1. Complicated (sometimes simple), smart, and magical for-loops can make everything much easier to do. 
-2. The instance variables of a different class can be accessed from an outside method (in an outside class) as long as the method instantiates a new object of the class that the instantce variables are in.
+2. The instance variables of a different class can be accessed from an outside method (in an outside class) as long as the method instantiates a new object of the class that the instance variables are in.
 3. Everything we learned in this semester is cool (and useful).
+
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-we changed the automatic level-up/level-down feature to an option that allows the player to choose his/her own preferred level because it makes the game more playable and and saves us some work.
+1. we changed the automatic level-up/level-down feature to an option that allows the player to choose his/her own preferred level because it makes the game more playable and and saves us some work.
+
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 1. WORK TOGETHER (together == at the same time, seeing the same code & terminal, solving the same problem) --> saves a lot of time and trouble.
 2. Others can see and fix the problems with your code much faster than you do.
-3. CollabeEdit --> troubles :( (because you can't see what other people have changeded / are changing and blindly coping & pasting messes up everything.)
+3. Collabedit --> troubles :( (because you can't see what other people have changed / are changing and blindly coping & pasting messes up everything.)
 4. Skype & join.me --> think smarter, work faster :)
 5. Don't be scared off by error messages (even if there are over 80 of them). Solving one at a time will eventually produce a fully working version.
 6. Or even better, write & test a small piece of code at the time instead of writing 5 methods without noticing all the errors in them. It will make the debugging process clearer, easier, and shorter :)
@@ -101,6 +103,6 @@ Taylor :: began flip method, created findR/findC methods
 2017-01-22
 --------------------------------------------------------------
 <Member> :: <Thing member did.>
-Iris :: debugged code, added inputs and take-notes features.
+Iris :: helped debug code, added inputs and take-notes features.
 Taylor :: edited findR/C, edited flip, edited main in Woo, created flipAll, created toTopher method, edited playTurn method, debugged, instructions method, newGame method 
 ==============================================================
