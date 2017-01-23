@@ -7,6 +7,7 @@ public class Values {
     public static int[][] pointsVal;
     public static int[][] tophersVal;
     public static String allNotes;
+    public static int product;
     
     //default contructor
     public Values(){
@@ -19,27 +20,34 @@ public class Values {
         pointsVal = new int[2][5]; //the first row will be the COLUMN
         tophersVal = new int[2][5];//the second row will be the ROW 
         allNotes = "===================\nYour Notes: ";
-        
+        product = 1;
      }
-     
-     
-     
- 
 
+    public static int calc2(int level){
+	return 2 + level; 
+    }
+    public static int calc3(int level){
+	return 1 + level;
+    }
+    public static void calcProduct(int level){
+	product = calc2(level) * calc3(level);
+    }
+    
     //populates lineVal with 0 1 2 and 3 
-    public void popLineVal (){
+    public void popLineVal (int level){
+
 	for (int i = 0; i < 25; i ++){
-	    if (i < 15){
-		lineVal[i] = 1;
+	    if (i < 6){
+		lineVal[i] = 0;
 	    }
-	    else if (i < 18){
+	    else if (i < 8 + level){
 		lineVal[i] = 2;
 	    }
-	    else if (i < 20){
+	    else if (i < 9 + level){
 		lineVal[i] = 3;
 	    }
 	    else{
-		lineVal[i] = 0;
+		lineVal[i] = 1;
 	    }	
 	}
 
@@ -50,7 +58,8 @@ public class Values {
 	    lineVal[ran] = temp;
 	        
 	    
-	}   
+	}
+	calcProduct(level);
 	
     }
 	    

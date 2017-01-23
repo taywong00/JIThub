@@ -1,9 +1,13 @@
 public class Woo {
-    // public static int level = 1;
+    public static int level = 1;
+    public static int numGames = 0;
     public static int pointCtr = 1;
     private static Display foo;
     private static Values boo;
     private static boolean flippedTopher = false;
+
+
+    
     
     //NOTE: display method has methods to find x and y of a letter in the display grid 
     
@@ -13,9 +17,7 @@ public class Woo {
 	
         int letterR = foo.findR(letter);
 	int letterC = foo.findC(letter);
-	
-
-        
+      
         //get new number from boo (values)
         
         int newNumVal = boo.gridVal[letterR][letterC];
@@ -30,12 +32,12 @@ public class Woo {
             //put the regular newNumVal where the letter was (and thats it)
             foo.gridDis[letterR][letterC] = "" + newNumVal;
 	    pointCtr = newNumVal * pointCtr;
+	    
         }
-        
         
     }
     
-    //occurs when you flip a topher
+    //occurs when you flip a topher or win
     //basically just set the gridDis to gridVal
     public static  void flipAll() {
        
@@ -68,13 +70,20 @@ public class Woo {
     
         
         if (choice == 1){
-	    flip(letter);
-         
-	    
-	    
-            //regular continue of gameplay
+	    flip(letter);	    
+            //flips a 1, 2, or 3
+
+	    //you win
+	    if (pointCtr == boo.product){
+		System.out.println("you flipped all the 2s and 3s! move on to the next level!");
+		flipAll();
+		foo.printAll(boo.tophersVal, boo.pointsVal);
+		flippedTopher = false;
+	    }
+
 	    
             if (flippedTopher == false) {
+        
                 System.out.println("Here's what your grid looks like after you flipped " + letter + ":\n");
 		System.out.println("You have " + pointCtr + " point(s)!");
                 foo.printAll(boo.tophersVal, boo.pointsVal);
@@ -85,6 +94,7 @@ public class Woo {
 		System.out.println("STUDY the grid below and be SMARTER next time! :)");
 		
                 foo.printAll(boo.tophersVal, boo.pointsVal);
+
             }   
         }
 
@@ -150,7 +160,7 @@ public class Woo {
 
 	int wannaPlay = 2;
 	newGame();
-
+	
 	while (wannaPlay != 1) {
 	    //ask if they wanna play
 	    System.out.println("\n\nAre you ready to play??");
@@ -171,38 +181,27 @@ public class Woo {
 	    }
 	}
 	    
-	    if (wannaPlay == 1) {
-		//Display
-		foo = new Display();
-		
-		String allNotes = "";
-		
-		//Value
-		
-		boo = new Values();
-		
-		boo.popLineVal();
-		
-		boo.popGridVal();
-		
-		boo.popTophers();
-		boo.popPoints();
-		
-		//================
-		
-		foo.populate();
-		
-		foo.printAll(boo.tophersVal, boo.pointsVal);
-		
-		//================
-	    
-		
-		while (flippedTopher == false) {
-		    playTurn();
-		}
-	    
-	    }
-    
-           
+	if (wannaPlay == 1) {
+	    	System.out.println("how difficult would you like this to be? (1-3)");
+             int difficulty = Keyboard.readInt();
+	     level = difficulty;
+
+        
+	    //Display
+	    foo = new Display();
+	    String allNotes = "";
+	    //Value	
+	    boo = new Values();		
+	    boo.popLineVal(level);		
+	    boo.popGridVal();		
+	    boo.popTophers();
+	    boo.popPoints();		
+	    //================		
+	    foo.populate();		
+	    foo.printAll(boo.tophersVal, boo.pointsVal);		
+	    //================      		
+	    while (flippedTopher == false) {
+		playTurn();
+	    }}
     }
 }
