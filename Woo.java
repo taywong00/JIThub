@@ -14,8 +14,7 @@ public class Woo {
         int letterR = foo.findR(letter);
 	int letterC = foo.findC(letter);
 	
-	//System.out.println("======" + foo.findR(letter));
-	//System.out.println("======" + foo.findC(letter));
+
         
         //get new number from boo (values)
         
@@ -30,6 +29,7 @@ public class Woo {
         else {
             //put the regular newNumVal where the letter was (and thats it)
             foo.gridDis[letterR][letterC] = "" + newNumVal;
+	    pointCtr = newNumVal * pointCtr;
         }
         
         
@@ -62,49 +62,59 @@ public class Woo {
     
     
     public static void playTurn(){
-        System.out.println("Enter a letter coordinate that's shown above:");
+	System.out.println(boo.allNotes);
+	System.out.println("===================");
+        System.out.println("Select a letter... Don't run into a topher! ");
         String letter = Keyboard.readString().toUpperCase();
 	
-        System.out.println(letter);
-    
-        System.out.println("What do you want to do with it?");
-        System.out.println("1. Flip it!");
-        System.out.println("2. Take notes...");
+      
+	System.out.println("===================");
+        System.out.println("I want to ..... ");
+        System.out.println("1. Flipppp it!");
+        System.out.println("2. Take notes!");
+	System.out.println("3. Break!");
         int choice = Keyboard.readInt();
-    System.out.println(boo.allNotes);
+    
     
         
         if (choice == 1){
 	    flip(letter);
-	   
             toTopher();
-	    foo.printAll();
+	    
 	    
             //regular continue of gameplay
-	    /*
+	    
             if (flippedTopher == false) {
                 System.out.println("Here's what your grid looks like after you flipped " + letter + ":\n");
-                foo.printAll();
+		System.out.println("You have " + pointCtr + " point(s)!");
+                foo.printAll(boo.tophersVal, boo.pointsVal);
             }
             else {
-                System.out.print("Oh no! Looks like you flipped a Topher!");
-                foo.printAll();
-            }
-	    */
-            
+                System.out.println("Oh no! Looks like you flipped a Topher! DX");
+		System.out.println("STUDY the grid below and be SMARTER next time! :)");
+                foo.printAll(boo.tophersVal, boo.pointsVal);
+            }   
         }
-        else{
+
+	
+        else if (choice == 2){
         takeNotes(letter);
+        foo.printAll(boo.tophersVal, boo.pointsVal);
         }
+
+
+	
+	else{
+	    flippedTopher = true;
+	}
      }
 
-    //====================
-            //takeNotes
+    //====================        
     public static void takeNotes(String letter){
     System.out.println("Please enter your notes for " + letter);
     String notes = Keyboard.readString();
-    //System.out.println(notes);
-    boo.allNotes += letter + ": " +  notes;
+   
+    boo.allNotes += "\n" + letter + ": " +  notes;
     
     }
     //====================
@@ -116,7 +126,7 @@ public class Woo {
         foo = new Display();
 
 	
-
+	String allNotes = "";
 
         //Value
     
@@ -129,16 +139,19 @@ public class Woo {
 	boo.popTophers();
 	boo.popPoints();
 
+	//================
+
         foo.populate();
        
-	foo.printAll();
+	foo.printAll(boo.tophersVal, boo.pointsVal);
+
+	//================
 
 	
 	 
-	playTurn();
-          //actual game playing
 
-        while (flippedTopher = false) {
+
+        while (flippedTopher == false) {
             playTurn();
         }
  

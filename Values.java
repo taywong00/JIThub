@@ -6,7 +6,7 @@ public class Values {
     public static int[][] gridVal;
     public static int[][] pointsVal;
     public static int[][] tophersVal;
-    public String allNotes;
+    public static String allNotes;
     
     //default contructor
     public Values(){
@@ -18,27 +18,13 @@ public class Values {
         gridVal = new int[5][5]; 
         pointsVal = new int[2][5]; //the first row will be the COLUMN
         tophersVal = new int[2][5];//the second row will be the ROW 
-        allNotes = "Your Notes: \n";
+        allNotes = "===================\nYour Notes: ";
         
      }
      
      
      
-     
-   
-     
-  
-    
-    // adds value (1, 2, 3) to lineVal for x times 
-    /*
-    public void addToLineVal( int value, int x )
-
-    {
-    for(int a = 0; a < x ; a++x){
-        lineVal[a] = value;
-    }
-    }
-    */
+ 
 
     //populates lineVal with 0 1 2 and 3 
     public void popLineVal (){
@@ -64,9 +50,7 @@ public class Values {
 	    lineVal[ran] = temp;
 	        
 	    
-	}
-
-       
+	}   
 	
     }
 	    
@@ -110,14 +94,17 @@ public class Values {
     //populates pointsVal with the values from the array----Sum methods for display to call
     public void popPoints(){
     
-    for(int i : pointsVal[0]){
+    for(int i = 0; i < 5; i ++){
         pointsVal[0][i] = arrayRowSum(i);
     }
-    for(int i : pointsVal[1]){
+    for(int i = 0; i < 5; i ++){
         pointsVal[1][i] = arrayColumnSum(i);
     }
-    
     }
+    
+    
+
+    
 
 //=====================THE ABOVE FOCUSES ON COUNTING POINTS======
 //=====================THE BELOW FOCUSES ON COUNTING TOPHERS=====
@@ -150,42 +137,20 @@ public class Values {
     
     //populates tophersVAL with values from the array---tophers methods for display to call
     public void popTophers(){
-
-	for (int i = 0; i <2; i ++){
-	    for (int c = 0; c< 5; c ++){
-		
-		tophersVal[i][c] = 4;
-		System.out.print(tophersVal[i][c]);
-	        
-	    }
-	}
     
-    }
-    /*
  
+       for(int i = 0; i < 5; i ++){	
+	tophersVal[0][i] = arrayRowTophers(i);
+    }
+       
        for(int i = 0; i < 5; i ++){
-	
-
-	   tophersVal[0][i] = 4;//arrayRowTophers(i);
-    }
-    for(int i = 0; i < 5; i ++){
-        tophersVal[1][i] = 4;// arrayColumnTophers(i);
+	   tophersVal[1][i] =  arrayColumnTophers(i);
     }
 	
     
     }
-    */
     
-//================================THE ABOVE FOCUSES ON TOPHERS============    
-  
-    public static String getValuePoints(int x, int y){
-
-        return pointsVal[x][y] + "";
-    }
-    public static String  getValueTophers(int x, int y){
-
-        return tophersVal[x][y] + "";
-    }
     
+
     
 }
