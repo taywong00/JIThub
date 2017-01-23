@@ -69,41 +69,42 @@ public class Display{
     public void printAll(int[][] tophersVal, int[][] pointsVal){
        
         System.out.println("\n\n\n=========*** GRID ***=========");
-        System.out.println("P/T----------");
+        System.out.println("P/T  --------------------");
 	
 	for (int i = 0; i < 5; i ++){
-	    System.out.print(pointsVal[0][i]);
+	    System.out.print( pointsVal[0][i]);
 	    System.out.print(" ");
 	    
 	    System.out.print(tophersVal[0][i]);
 	    System.out.print("  ");
 	    
-	    
+	 
 	    for (int c = 0; c < 5; c ++){
-		System.out.print(gridDis[i][c] + " ");
+		System.out.print(" - " + gridDis[i][c]);
 	    }
+		System.out.print("-");
+	    
 	    System.out.println("  ");
 	   
-	  
+ System.out.println("     ---------------------");	  
 	}
-	System.out.println(" ");
-	System.out.print("T   ");
+
+	System.out.print("    T");
 
 
 	for (int i : tophersVal[1]){
-	    System.out.print(" " + i);
+	    System.out.print("   " + i);
 	}
 
 	
         System.out.println(" ");	
-	System.out.print("P   ");
+	System.out.print("    P");
   
 	for (int i : pointsVal[1]){
-	    System.out.print(" "+i );
+	    System.out.print("   "+i );
 	}
 	
  	System.out.println(" ");
-	 System.out.println("----------");
    }
    
    
