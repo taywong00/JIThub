@@ -116,6 +116,7 @@ public class Woo {
 	
 	else{
 	    flippedTopher = true;
+	    System.out.println("No problem! See ya! Thanks for playing!");
 	}
      }
 
