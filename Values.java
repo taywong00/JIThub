@@ -23,14 +23,10 @@ public class Values {
         product = 1;
      }
 
-    public static int calc2(int level){
-	return 2 + level; 
-    }
-    public static int calc3(int level){
-	return 1 + level;
-    }
+   
+    
     public static void calcProduct(int level){
-	product = calc2(level) * calc3(level);
+	product = (int)(Math.pow(2, level +2)) * (int)(Math.pow(3, level +1)) ;
     }
     
     //populates lineVal with 0 1 2 and 3 
@@ -43,7 +39,7 @@ public class Values {
 	    else if (i < 8 + level){
 		lineVal[i] = 2;
 	    }
-	    else if (i < 9 + level){
+	    else if (i < 10 + level){
 		lineVal[i] = 3;
 	    }
 	    else{

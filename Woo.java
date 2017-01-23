@@ -5,7 +5,7 @@ public class Woo {
     private static Display foo;
     private static Values boo;
     private static boolean flippedTopher = false;
-
+    private static int totalPoints;
 
     
     
@@ -21,7 +21,9 @@ public class Woo {
         //get new number from boo (values)
         
         int newNumVal = boo.gridVal[letterR][letterC];
-        
+
+	 pointCtr = newNumVal * pointCtr;
+	
         //check to see if you flipped a topher!
         if (newNumVal == 0) {
             foo.gridDis[letterR][letterC] = "" + newNumVal;
@@ -31,9 +33,17 @@ public class Woo {
         else {
             //put the regular newNumVal where the letter was (and thats it)
             foo.gridDis[letterR][letterC] = "" + newNumVal;
-	    pointCtr = newNumVal * pointCtr;
-	    
+	  
         }
+	//checks to see if you won
+	if (pointCtr == boo.product){
+	    flipAll();
+	    foo.printAll(boo.tophersVal, boo.pointsVal);
+	    totalPoints += pointCtr;
+	    System.out.println("you flipped all the 2s and 3s! play another game!");
+	    flippedTopher = true;
+	}
+
         
     }
     
@@ -73,26 +83,24 @@ public class Woo {
 	    flip(letter);	    
             //flips a 1, 2, or 3
 
-	    //you win
-	    if (pointCtr == boo.product){
-		System.out.println("you flipped all the 2s and 3s! move on to the next level!");
-		flipAll();
-		foo.printAll(boo.tophersVal, boo.pointsVal);
-		flippedTopher = false;
-	    }
 
 	    
             if (flippedTopher == false) {
         
                 System.out.println("Here's what your grid looks like after you flipped " + letter + ":\n");
-		System.out.println("You have " + pointCtr + " point(s)!");
+		System.out.println("You have " + pointCtr + " point(s) out of " + boo.product + "!");
                 foo.printAll(boo.tophersVal, boo.pointsVal);
             }
             else {
-	        
+	        if (pointCtr != boo.product){
+		    
+		
                 System.out.println("Oh no! Looks like you flipped a Topher! DX");
 		System.out.println("STUDY the grid below and be SMARTER next time! :)");
+		}
+
 		
+		System.out.println("total points:" + totalPoints);
                 foo.printAll(boo.tophersVal, boo.pointsVal);
 
             }   
@@ -158,6 +166,7 @@ public class Woo {
            
     public static void main(String[] args){
 
+
 	int wannaPlay = 2;
 	newGame();
 	
@@ -180,7 +189,9 @@ public class Woo {
 		break;
 	    }
 	}
-	    
+
+
+
 	if (wannaPlay == 1) {
 	    	System.out.println("how difficult would you like this to be? (1-3)");
              int difficulty = Keyboard.readInt();
@@ -202,6 +213,8 @@ public class Woo {
 	    //================      		
 	    while (flippedTopher == false) {
 		playTurn();
-	    }}
+	    }
+	}
+    
     }
 }
