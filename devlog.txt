@@ -105,6 +105,6 @@ Taylor :: began flip method, created findR/findC methods
 2017-01-22
 --------------------------------------------------------------
 <Member> :: <Thing member did.>
-Iris :: helped debug code, added inputs and take-notes features.
+Iris :: helped debug code, added inputs and take-notes features, wrote devlog.
 Taylor :: edited findR/C, edited flip, edited main in Woo, created flipAll, created toTopher method, edited playTurn method, debugged, instructions method, newGame method, flowchart 
 ==============================================================
