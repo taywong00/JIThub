@@ -35,9 +35,11 @@ COOL STUFF LEARNED
 3. Everything we learned in this semester is cool (and useful).
 
 
+
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 1. we changed the automatic level-up/level-down feature to an option that allows the player to choose his/her own preferred level because it makes the game more playable and and saves us some work.
+
 
 
 LESSONS LEARNED
