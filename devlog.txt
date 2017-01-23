@@ -106,5 +106,5 @@ Taylor :: began flip method, created findR/findC methods
 --------------------------------------------------------------
 James :: edited methods that weren't fully working (debugged), created most of the methods, drew the UML diagram.
 Iris :: edited methods that weren't fully working (debugged), created inputs and take-notes methods, wrote devlog.
-Taylor :: findR/C, edited flip, edited main in Woo, created flipAll, created toTopher method, edited playTurn method, debugged, instructions method, newGame method, flowchart 
+Taylor :: edited findR/C, edited flip, edited main in Woo, created flipAll, created toTopher method, edited playTurn method, debugged, instructions method, newGame method, flowchart 
 ==============================================================
