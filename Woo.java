@@ -49,17 +49,7 @@ public class Woo {
     
     
 
-        //convert the 0s to @'s for topher
-    public static  void toTopher() {
-        for (int r = 0; r < 5; r ++){
-        for (int c = 0; c < 5; c ++){
-                if (foo.gridDis[r][c] == "0") {
-                    foo.gridDis[r][c] = "@";
-                }
-            }
-        }
-    }
-    
+
     
     public static void playTurn(){
 	System.out.println(boo.allNotes);
@@ -79,7 +69,7 @@ public class Woo {
         
         if (choice == 1){
 	    flip(letter);
-            toTopher();
+         
 	    
 	    
             //regular continue of gameplay
@@ -90,8 +80,10 @@ public class Woo {
                 foo.printAll(boo.tophersVal, boo.pointsVal);
             }
             else {
+	        
                 System.out.println("Oh no! Looks like you flipped a Topher! DX");
 		System.out.println("STUDY the grid below and be SMARTER next time! :)");
+		
                 foo.printAll(boo.tophersVal, boo.pointsVal);
             }   
         }
